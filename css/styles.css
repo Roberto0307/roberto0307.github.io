@@ -123,10 +123,10 @@ img, svg { display: block; max-width: 100%; }
 .logo-slot {
   display: inline-flex;
   align-items: center;
-  height: 38px;
+  height: 52px;
   max-width: 200px;
 }
-.logo-slot--footer { height: 32px; }
+.logo-slot--footer { height: 52px; }
 .logo-img { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 
 /* Contenido de respaldo mientras no se haya cargado el archivo real del logo */
@@ -256,6 +256,36 @@ img, svg { display: block; max-width: 100%; }
 .cta-actions { display: flex; gap: 14px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
 .btn-ghost--dark { color: var(--white); border-color: rgba(255,255,255,0.5); }
 .btn-ghost--dark:hover { background: rgba(255,255,255,0.08); border-color: var(--white); }
+
+/* ---------- Botón volver arriba ---------- */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--navy-700);
+  color: var(--white);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px -6px rgba(14, 34, 56, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
+  z-index: 90;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--blue-500); }
+
+@media (max-width: 600px) {
+  .back-to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-900); color: rgba(255,255,255,0.82); padding-top: 64px; }
