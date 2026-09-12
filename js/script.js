@@ -101,4 +101,56 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', updateState);
     updateState();
   });
+
+  // Galería con lightbox: clic en cualquier captura la abre en grande,
+  // con flechas para pasar a la anterior/siguiente y Esc/clic afuera para cerrar.
+  var galleryItems = Array.prototype.slice.call(document.querySelectorAll('[data-gallery-item]'));
+  var lightbox = document.getElementById('lightbox');
+
+  if (galleryItems.length && lightbox) {
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+    var lightboxClose = document.getElementById('lightboxClose');
+    var lightboxPrev = document.getElementById('lightboxPrev');
+    var lightboxNext = document.getElementById('lightboxNext');
+    var currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = (index + galleryItems.length) % galleryItems.length;
+      var item = galleryItems[currentIndex];
+      lightboxImg.src = item.getAttribute('data-full');
+      lightboxImg.alt = item.getAttribute('data-caption') || '';
+      lightboxCaption.textContent = item.getAttribute('data-caption') || '';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    galleryItems.forEach(function (item, index) {
+      item.addEventListener('click', function () { openLightbox(index); });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', function () { openLightbox(currentIndex - 1); });
+    if (lightboxNext) lightboxNext.addEventListener('click', function () { openLightbox(currentIndex + 1); });
+
+    // Cerrar al hacer clic fuera de la imagen (en el fondo oscuro)
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Navegación por teclado
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') openLightbox(currentIndex - 1);
+      if (e.key === 'ArrowRight') openLightbox(currentIndex + 1);
+    });
+  }
 });

@@ -243,6 +243,150 @@ img, svg { display: block; max-width: 100%; }
   .solutions-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- Galería de la plataforma ---------- */
+.gallery { padding: 96px 0; background: var(--bg-soft); }
+.gallery .section-head { margin-bottom: 48px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+
+/* "Mockup" de navegador que enmarca cada captura */
+.browser-frame {
+  display: block;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.gallery-item:hover .browser-frame { transform: translateY(-3px); box-shadow: 0 16px 32px -14px rgba(14, 34, 56, 0.25); }
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+.browser-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+.browser-dot:nth-child(1) { background: #E5877B; }
+.browser-dot:nth-child(2) { background: #E8C57B; }
+.browser-dot:nth-child(3) { background: #8FC28C; }
+
+.browser-body {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--white);
+}
+.browser-body img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* Contenido de respaldo mientras no se haya subido la captura real */
+.browser-body--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(135deg, var(--blue-100), var(--blue-100) 10px, var(--bg-soft) 10px, var(--bg-soft) 20px);
+}
+.browser-body--empty::before {
+  content: '\f03e';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--navy-700);
+  opacity: 0.5;
+}
+
+.gallery-caption {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--navy-900);
+}
+
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 34, 56, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  padding: 24px;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+
+.lightbox-figure { max-width: min(90vw, 1000px); margin: 0; text-align: center; }
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: var(--radius-m);
+  margin: 0 auto;
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+}
+.lightbox-figure figcaption {
+  margin-top: 16px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: fixed;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+.lightbox-close:hover,
+.lightbox-arrow:hover { background: rgba(255,255,255,0.2); }
+
+.lightbox-close { top: 24px; right: 24px; width: 44px; height: 44px; font-size: 1.1rem; }
+.lightbox-arrow { top: 50%; transform: translateY(-50%); width: 52px; height: 52px; font-size: 1.2rem; }
+.lightbox-arrow--prev { left: 24px; }
+.lightbox-arrow--next { right: 24px; }
+
+@media (max-width: 640px) {
+  .lightbox-arrow { width: 42px; height: 42px; }
+  .lightbox-arrow--prev { left: 10px; }
+  .lightbox-arrow--next { right: 10px; }
+  .lightbox-close { top: 14px; right: 14px; }
+}
+
 /* ---------- Consultoría / Carrusel de normas ---------- */
 .consulting { padding: 96px 0 88px; }
 .consulting .section-head { margin-bottom: 40px; }

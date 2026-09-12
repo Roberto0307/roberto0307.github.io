@@ -164,6 +164,87 @@
     </div>
   </section>
 
+  <!-- GALERÍA DE LA PLATAFORMA -->
+  <section class="gallery" id="galeria">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Así se ve Osua GRC</h2>
+        <p>Una plataforma diseñada para que la gestión de tu organización sea clara, visual y fácil de usar.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- Para agregar o cambiar una captura, edita el src del <img> y el data-full/data-caption del botón -->
+         <button type="button" class="gallery-item" data-gallery-item data-full="assets/indicadores.png" data-caption="Objetivos e Indicadores">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/indicadores.png" alt="Módulo de Objetivos e Indicadores" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Objetivos e Indicadores</span>
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/riesgos_oportunidades.png" data-caption="Riesgos y Oportunidades">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/riesgos_oportunidades.png" alt="Módulo de Riesgos y Oportunidades" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Riesgos y Oportunidades</span>
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/fuentes_normativas.png" data-caption="Cumplimiento normativo">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/fuentes_normativas.png" alt="Módulo de Cumplimiento" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Cumplimiento normativo</span>
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/screenshots/auditoria.png" data-caption="Auditoría Interna">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/screenshots/auditoria.png" alt="Módulo de Auditoría Interna" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Auditoría Interna</span>
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/documentos.png" data-caption="Gestión Documental">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/documentos.png" alt="Módulo de Gestión Documental" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Gestión Documental</span>
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/planes_de_acción.png" data-caption="Planes de Acción">
+          <span class="browser-frame">
+            <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
+            <span class="browser-body">
+              <img src="assets/planes_de_acción.png" alt="Módulo de Planes de Acción" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('browser-body--empty')">
+            </span>
+          </span>
+          <span class="gallery-caption">Planes de Acción</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULTORÍA EN CUMPLIMIENTO NORMATIVO -->
   <section class="consulting" id="consultoria">
     <div class="wrap">
@@ -288,6 +369,23 @@
     <p>&copy; <span id="year"></span> Osua GRC. Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<!-- Lightbox de la galería -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <button type="button" class="lightbox-arrow lightbox-arrow--prev" id="lightboxPrev" aria-label="Captura anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+  <button type="button" class="lightbox-arrow lightbox-arrow--next" id="lightboxNext" aria-label="Siguiente captura">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>
 
 <button id="backToTop" class="back-to-top" aria-label="Volver arriba" type="button">
   <i class="fa-solid fa-arrow-up"></i>
