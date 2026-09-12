@@ -243,6 +243,126 @@ img, svg { display: block; max-width: 100%; }
   .solutions-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- Consultoría / Carrusel de normas ---------- */
+.consulting { padding: 96px 0 88px; }
+.consulting .section-head { margin-bottom: 40px; }
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 2px 16px;
+  margin: 0;
+  list-style: none;
+  /* oculta la barra de scroll manteniendo el desplazamiento nativo/táctil */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+.norm-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 28px 24px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.norm-card:hover { border-color: var(--blue-500); box-shadow: var(--shadow-card); }
+
+.norm-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--blue-100);
+  color: var(--navy-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+.norm-card h3 { margin-bottom: 2px; }
+.norm-card-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gold-500);
+  margin-bottom: 12px;
+}
+.norm-card p:not(.norm-card-tag) { font-size: 0.92rem; margin-bottom: 16px; flex-grow: 1; }
+.norm-card-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+.norm-card-link i { font-size: 0.75rem; transition: transform 0.15s ease; }
+.norm-card-link:hover { color: var(--blue-500); }
+.norm-card-link:hover i { transform: translateX(3px); }
+
+.carousel-arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--navy-800);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+.carousel-arrow:hover { border-color: var(--navy-700); color: var(--navy-700); }
+.carousel-arrow:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+}
+.carousel-dots button.is-active { background: var(--navy-700); width: 22px; border-radius: 4px; transition: width 0.2s ease; }
+
+@media (max-width: 640px) {
+  .carousel-arrow { display: none; }
+  .carousel { padding: 0 20px; }
+  .carousel-slide { flex-basis: 250px; }
+}
+
 /* ---------- CTA final ---------- */
 .cta-section { background: var(--navy-900); color: var(--white); padding: 88px 0; }
 .cta-inner {
