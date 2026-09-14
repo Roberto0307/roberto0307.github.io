@@ -64,18 +64,6 @@ img, svg { display: block; max-width: 100%; }
   z-index: 1;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  background: var(--navy-900);
-  color: var(--white);
-  padding: 10px 16px;
-  border-radius: var(--radius-s);
-  z-index: 999;
-}
-.skip-link:focus { left: 16px; top: 16px; }
-
 /* ---------- Marca decorativa de fondo ---------- */
 .section-mark {
   position: absolute;
@@ -436,6 +424,38 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 640px) {
   .value-media-frame { padding: 24px; border-radius: var(--radius-m); }
+}
+
+/* ---------- Solución adaptada / Cotización ---------- */
+.tailored { padding: 96px 0; background: var(--bg-soft); }
+
+.tailored-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.tailored-copy p { font-size: 1.05rem; margin-bottom: 28px; }
+
+.tailored-media-frame {
+  background: var(--navy-700);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tailored-illustration { width: 100%; max-width: 300px; height: auto; display: block; }
+
+@media (max-width: 640px) {
+  .tailored-media-frame { padding: 24px; border-radius: var(--radius-m); }
+}
+
+@media (max-width: 900px) {
+  .tailored-inner { grid-template-columns: 1fr; }
+  .tailored-media { order: 2; }
 }
 
 /* ---------- Consultoría / Carrusel de normas ---------- */
