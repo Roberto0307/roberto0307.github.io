@@ -30,10 +30,18 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h); /* Evita que el header fijo solape los títulos al usar anclas */
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 body {
@@ -46,14 +54,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { font-family: var(--font); color: var(--navy-900); margin: 0 0 0.5em; line-height: 1.15; }
+/* Tipografía global */
+h1, h2, h3, h4 {
+  font-family: var(--font);
+  color: var(--navy-900);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+}
 h1 { font-weight: 700; font-size: clamp(2rem, 3.4vw, 2.75rem); letter-spacing: -0.01em; }
 h2 { font-weight: 700; font-size: clamp(1.6rem, 2.6vw, 2.1rem); letter-spacing: -0.01em; }
 h3 { font-weight: 500; font-size: 1.15rem; }
 p { margin: 0 0 1em; color: var(--ink-soft); max-width: 62ch; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
-img, svg { display: block; max-width: 100%; }
+img, svg { display: block; max-width: 100%; height: auto; }
 
 .wrap {
   width: 100%;
@@ -64,7 +78,7 @@ img, svg { display: block; max-width: 100%; }
   z-index: 1;
 }
 
-/* ---------- Marca decorativa de fondo ---------- */
+/* ---------- Marcas decorativas de fondo ---------- */
 .section-mark {
   position: absolute;
   z-index: 0;
@@ -93,7 +107,7 @@ img, svg { display: block; max-width: 100%; }
   opacity: 0.09;
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Botones ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -137,8 +151,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .brand { display: flex; align-items: center; color: var(--navy-900); }
 
-/* Contenedor del logotipo: mantiene proporción y una altura fija
-   para que la imagen real (SVG o PNG) nunca se deforme ni desborde. */
 .logo-slot {
   display: inline-flex;
   align-items: center;
@@ -148,7 +160,6 @@ img, svg { display: block; max-width: 100%; }
 .logo-slot--footer { height: 52px; }
 .logo-img { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 
-/* Contenido de respaldo mientras no se haya cargado el archivo real del logo */
 .logo-slot--empty::after {
   content: attr(data-fallback);
   font-weight: 700;
@@ -159,6 +170,38 @@ img, svg { display: block; max-width: 100%; }
 .logo-slot--footer.logo-slot--empty::after { color: var(--white); }
 
 .header-actions { display: flex; align-items: center; gap: 14px; }
+
+/* ---------- Layout Unificado: Split Grid & Media Frame ---------- */
+.split-section { padding: 96px 0; }
+.split-section--alt { background: var(--bg-soft); }
+
+.split-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .split-grid { grid-template-columns: 1fr; }
+  .split-grid__media { order: 2; }
+}
+
+/* Componente único para contenedores de imagen e ilustración */
+.media-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.media-frame__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media-frame__img--constrained {
+  max-width: 300px;
+}
 
 /* ---------- Hero ---------- */
 .hero { background: var(--bg-soft); padding-top: 72px; position: relative; overflow: hidden; }
@@ -211,27 +254,16 @@ img, svg { display: block; max-width: 100%; }
   .feature-strip { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ---------- Value section ---------- */
-.value-section { padding: 96px 0; }
-.value-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
-  gap: 56px;
-  align-items: center;
-}
-/* .value-media-frame: contenedor simple (sin fondo/borde/sombra), ver reglas compartidas más abajo */
+/* Párrafo destacado dentro de .split-grid__copy (reemplaza los antiguos
+   .value-lede y .tailored-copy p, unificados en la refactorización) */
+.split-grid__lede { font-size: 1.05rem; margin-bottom: 28px; }
 
-.value-lede { font-size: 1.05rem; color: var(--ink-soft); }
+/* ---------- Check list ---------- */
 .check-list { margin: 20px 0 28px; display: flex; flex-direction: column; gap: 12px; }
 .check-list li { display: flex; align-items: center; gap: 12px; font-weight: 500; color: var(--ink); }
 .check-list i { color: var(--gold-500); font-size: 1.05rem; }
 
-@media (max-width: 900px) {
-  .value-inner { grid-template-columns: 1fr; }
-  .value-media { order: 2; }
-}
-
-/* ---------- Solutions ---------- */
+/* ---------- Soluciones ---------- */
 .solutions { padding: 96px 0; background: var(--bg-soft); position: relative; overflow: hidden; }
 .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
 .section-head p { margin: 0 auto; }
@@ -403,40 +435,6 @@ img, svg { display: block; max-width: 100%; }
   .lightbox-arrow--prev { left: 10px; }
   .lightbox-arrow--next { right: 10px; }
   .lightbox-close { top: 14px; right: 14px; }
-}
-
-/* ---------- Contenedores de imagen (Valor conectado / Solución adaptada) ---------- */
-.value-media-frame,
-.tailored-media-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.value-mockup-img,
-.tailored-illustration {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.tailored-illustration { max-width: 300px; }
-
-/* ---------- Solución adaptada / Cotización ---------- */
-.tailored { padding: 96px 0; background: var(--bg-soft); }
-
-.tailored-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-  gap: 56px;
-  align-items: center;
-}
-
-.tailored-copy p { font-size: 1.05rem; margin-bottom: 28px; }
-
-@media (max-width: 900px) {
-  .tailored-inner { grid-template-columns: 1fr; }
-  .tailored-media { order: 2; }
 }
 
 /* ---------- Consultoría / Carrusel de normas ---------- */
@@ -666,7 +664,7 @@ img, svg { display: block; max-width: 100%; }
   .footer-inner { grid-template-columns: 1fr; }
 }
 
-/* ---------- Responsive: hero grid ---------- */
+/* ---------- Responsive: Hero Grid ---------- */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; padding-bottom: 40px; }
   .hero-visual { order: -1; max-width: 320px; margin: 0 auto 8px; }

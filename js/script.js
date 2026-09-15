@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Carrusel de consultoría/normas: funciona con scroll nativo (táctil en
-  // móvil) y se puede navegar con las flechas o los puntos. Al agregar
-  // nuevas tarjetas (<li class="carousel-slide">) no hay que tocar este
-  // código: los puntos y el rango de las flechas se recalculan solos.
+  // móvil) y se puede navegar con las flechas, los puntos o el teclado
+  // (con foco en el carrusel). Al agregar nuevas tarjetas
+  // (<li class="carousel-slide">) no hay que tocar este código: los
+  // puntos y el rango de las flechas se recalculan solos.
   document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
     var track = carousel.querySelector('[data-carousel-track]');
     var prevBtn = carousel.querySelector('[data-carousel-prev]');
@@ -34,6 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!track) return;
 
     var slides = Array.prototype.slice.call(track.children);
+
+    // Cuánto se desplaza el carrusel por "página" (botones o teclado):
+    // el 90% del ancho visible, para que siempre quede un poco de la
+    // siguiente tarjeta asomando como pista visual.
+    function scrollByPage(direction) {
+      track.scrollBy({ left: direction * track.clientWidth * 0.9, behavior: 'smooth' });
+    }
 
     // Genera un punto por tarjeta
     var dots = [];
@@ -87,15 +95,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        track.scrollBy({ left: -track.clientWidth * 0.9, behavior: 'smooth' });
-      });
+      prevBtn.addEventListener('click', function () { scrollByPage(-1); });
     }
     if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        track.scrollBy({ left: track.clientWidth * 0.9, behavior: 'smooth' });
-      });
+      nextBtn.addEventListener('click', function () { scrollByPage(1); });
     }
+
+    // Soporte de teclado cuando el carrusel tiene foco (mismo desplazamiento
+    // que los botones, para que se sienta consistente sin importar cómo se navegue)
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') scrollByPage(-1);
+      else if (e.key === 'ArrowRight') scrollByPage(1);
+    });
 
     track.addEventListener('scroll', updateState, { passive: true });
     window.addEventListener('resize', updateState);

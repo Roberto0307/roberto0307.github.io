@@ -46,7 +46,7 @@
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <svg class="orbit" viewBox="0 0 480 480" role="img">
+        <svg class="orbit" viewBox="0 0 480 480" role="img" aria-label="Ilustración conceptual de Gobernanza, Riesgo y Cumplimiento">
           <circle class="orbit-ring orbit-ring--outer" cx="240" cy="240" r="200"/>
           <circle class="orbit-ring orbit-ring--mid" cx="240" cy="240" r="150"/>
           <circle class="orbit-ring orbit-ring--inner" cx="240" cy="240" r="98"/>
@@ -78,19 +78,19 @@
   </section>
 
   <!-- VALOR CONECTADO -->
-  <section class="value-section">
-    <div class="wrap value-inner">
-      <div class="value-media">
-        <div class="value-media-frame">
+  <section class="split-section">
+    <div class="wrap split-grid">
+      <div class="split-grid__media">
+        <div class="media-frame">
           <img src="assets/mockup_laptop.png"
                alt="Mockup de laptop mostrando el módulo de Riesgos de Osua GRC"
-               class="value-mockup-img" loading="lazy">
+               class="media-frame__img" loading="lazy">
         </div>
       </div>
 
-      <div class="value-copy">
+      <div class="split-grid__copy">
         <h2>El valor de una gestión conectada</h2>
-        <p class="value-lede">Control, trazabilidad y mejores decisiones.</p>
+        <p class="split-grid__lede">Control, trazabilidad y mejores decisiones.</p>
         <ul class="check-list">
           <li><i class="fa-solid fa-circle-check"></i>Mayor control</li>
           <li><i class="fa-solid fa-circle-check"></i>Trazabilidad de principio a fin</li>
@@ -163,7 +163,7 @@
       <div class="gallery-grid">
 
         <!-- Para agregar o cambiar una captura, edita el src del <img> y el data-full/data-caption del botón -->
-         <button type="button" class="gallery-item" data-gallery-item data-full="assets/indicadores.png" data-caption="Objetivos e Indicadores">
+        <button type="button" class="gallery-item" data-gallery-item data-full="assets/indicadores.png" data-caption="Objetivos e Indicadores">
           <span class="browser-frame">
             <span class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></span>
             <span class="browser-body">
@@ -247,7 +247,7 @@
         <i class="fa-solid fa-chevron-left"></i>
       </button>
 
-      <ul class="carousel-track" data-carousel-track>
+      <ul class="carousel-track" data-carousel-track tabindex="0" aria-label="Listado de normas ISO">
 
         <!-- Para agregar una nueva norma, duplica un <li class="carousel-slide"> completo y edita su contenido -->
         <li class="carousel-slide">
@@ -299,7 +299,6 @@
             <a href="#contacto" class="norm-card-link">Más información <i class="fa-solid fa-arrow-right"></i></a>
           </article>
         </li>
-
       </ul>
 
       <button type="button" class="carousel-arrow carousel-arrow--next" data-carousel-next aria-label="Ver siguiente norma">
@@ -311,19 +310,19 @@
   </section>
 
   <!-- SOLUCIÓN ADAPTADA / COTIZACIÓN POR NECESIDADES -->
-  <section class="tailored" id="cotizacion">
-    <div class="wrap tailored-inner">
-      <div class="tailored-copy">
+  <section class="split-section split-section--alt" id="cotizacion">
+    <div class="wrap split-grid">
+      <div class="split-grid__copy">
         <h2>Una solución adaptada a tu organización</h2>
-        <p>Cada organización tiene necesidades y niveles de gestión diferentes. Por eso, construimos una cotización de acuerdo con el alcance, los paquetes y las necesidades específicas de tu organización.</p>
+        <p class="split-grid__lede">Cada organización tiene necesidades y niveles de gestión diferentes. Por eso, construimos una cotización de acuerdo con el alcance, los paquetes y las necesidades específicas de tu organización.</p>
         <a href="#contacto" class="btn btn-primary">Solicita tu cotización</a>
       </div>
 
-      <div class="tailored-media" aria-hidden="true">
-        <div class="tailored-media-frame">
+      <div class="split-grid__media" aria-hidden="true">
+        <div class="media-frame">
           <img src="assets/cubos_3d.png"
-               alt="Ilustración de una solución adaptada a la organización"
-               class="tailored-illustration">
+               alt=""
+               class="media-frame__img media-frame__img--constrained" loading="lazy">
         </div>
       </div>
     </div>
@@ -337,7 +336,7 @@
       <p>Conecta la información, fortalece el control, mejora la trazabilidad y transforma la gestión de tu organización.</p>
       <div class="cta-actions">
         <a href="mailto:info@osuagrc.com?subject=Solicitud%20de%20demo%20-%20Osua%20GRC" class="btn btn-primary">Solicita una demo</a>
-        <a href="https://wa.me/573002917359" class="btn btn-ghost btn-ghost--dark" target="_blank" rel="noopener">Habla con nosotros</a>
+        <a href="https://wa.me/573002917359" class="btn btn-ghost btn-ghost--dark" target="_blank" rel="noopener noreferrer">Habla con nosotros</a>
       </div>
     </div>
   </section>
@@ -357,7 +356,7 @@
 
     <div class="footer-col">
       <h4>WhatsApp</h4>
-      <p><a href="https://wa.me/573002917359" target="_blank">+57 300 2917359</a></p>
+      <p><a href="https://wa.me/573002917359" target="_blank" rel="noopener noreferrer">+57 300 2917359</a></p>
     </div>
 
     <div class="footer-col">
