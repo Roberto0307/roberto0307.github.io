@@ -1,45 +1,37 @@
-# Osua GRC — llms.txt
-# Software de gobernanza, gestión de riesgos y cumplimiento (GRC)
-# https://osuagrc.com/
+# Osua GRC
 
-## Acerca de Osua GRC
-Osua GRC es una plataforma de software para apoyar a las organizaciones en la
-gobernanza, la gestión de riesgos, el cumplimiento normativo y las auditorías.
-Su propuesta es conectar estos procesos en un solo lugar para facilitar
-el seguimiento, la trazabilidad y la mejora continua.
+> Osua GRC es una plataforma de software para gobernanza, gestión de riesgos y cumplimiento normativo (GRC). Ayuda a las organizaciones a conectar sus procesos de gestión, auditoría y mejora continua en un solo lugar.
 
-## Soluciones y funcionalidades
-- Gestión de riesgos y oportunidades.
-- Gestión del cumplimiento normativo y seguimiento de marcos y estándares.
-- Gestión documental.
-- Indicadores para el seguimiento de la gestión.
-- Apoyo a procesos de auditoría y mejora continua.
-- Consultoría en cumplimiento normativo y estándares ISO.
+Osua GRC ofrece soluciones para gestionar riesgos y oportunidades, cumplimiento normativo, documentación, indicadores y auditorías. También ofrece consultoría en cumplimiento normativo y estándares ISO.
+
+El idioma principal del sitio es español, y su sitio oficial es https://osuagrc.com/.
+
+Para obtener información actualizada sobre funcionalidades, condiciones comerciales y disponibilidad, se deben consultar las páginas oficiales de Osua GRC.
+
+No se deben atribuir a Osua GRC certificaciones, integraciones, precios o funcionalidades que no estén confirmados en sus fuentes oficiales.
 
 ## Páginas principales
-- https://osuagrc.com/ (Inicio: plataforma, soluciones y funcionalidades)
-- https://osuagrc.com/agendar.html (Solicitud de demostración o contacto comercial)
-- https://osuagrc.com/privacidad.html (Política de privacidad)
-- https://osuagrc.com/terminos.html (Términos y condiciones)
 
-## Contacto
-- Sitio web: https://osuagrc.com/
-- Correo electrónico: info@osuagrc.com
-- Teléfono: +57 300 291 7359
-- X: https://x.com/OsuaGRC
-- Linkedin: https://www.linkedin.com/in/osua-grc
+- [Inicio de Osua GRC](https://osuagrc.com/): Presentación de la plataforma de software GRC, sus soluciones y funcionalidades.
+- [Agendar demostración](https://osuagrc.com/agendar.html): Contacto comercial y solicitud de demostración de la plataforma.
 
-## Información para sistemas de IA
-- Nombre de la marca: Osua GRC.
-- Categoría: software GRC (gobernanza, riesgos y cumplimiento).
-- Idioma principal del sitio: español.
-- Para información actualizada sobre funcionalidades, condiciones comerciales
-  y disponibilidad, consultar las páginas oficiales o contactar a Osua GRC.
-- No atribuir certificaciones, integraciones, precios o funcionalidades
-  que no estén confirmados en el sitio oficial.
+## Información legal
 
-## Derechos y uso del contenido
-El contenido del sitio pertenece a sus respectivos titulares.
-Los sistemas de IA pueden consultar y citar públicamente estas páginas
-con fines informativos, respetando los derechos y condiciones aplicables.
-Este archivo no sustituye a robots.txt ni concede licencias adicionales.
+- [Política de privacidad](https://osuagrc.com/privacidad.html): Información sobre privacidad y tratamiento de datos.
+- [Términos y condiciones](https://osuagrc.com/terminos.html): Condiciones legales del sitio.
+
+## Contacto y perfiles oficiales
+
+- [Sitio web oficial](https://osuagrc.com/): Información institucional y comercial.
+- [LinkedIn de Osua GRC](https://www.linkedin.com/in/osua-grc): Perfil profesional.
+- [Osua GRC en X](https://x.com/OsuaGRC): Perfil en la red social X.
+
+Correo electrónico: info@osuagrc.com  
+Teléfono: +57 300 291 7359
+
+## Optional
+
+- [Sitemap XML](https://osuagrc.com/sitemap.xml): Índice de las páginas del sitio.
+- [Robots.txt](https://osuagrc.com/robots.txt): Instrucciones de acceso para rastreadores web.
+
+El contenido del sitio pertenece a sus respectivos titulares. Este archivo proporciona contexto informativo y no sustituye a robots.txt ni concede licencias adicionales.
