@@ -1,0 +1,45 @@
+# Osua GRC — llms.txt
+# Software de gobernanza, gestión de riesgos y cumplimiento (GRC)
+# https://osuagrc.com/
+
+## Acerca de Osua GRC
+Osua GRC es una plataforma de software para apoyar a las organizaciones en la
+gobernanza, la gestión de riesgos, el cumplimiento normativo y las auditorías.
+Su propuesta es conectar estos procesos en un solo lugar para facilitar
+el seguimiento, la trazabilidad y la mejora continua.
+
+## Soluciones y funcionalidades
+- Gestión de riesgos y oportunidades.
+- Gestión del cumplimiento normativo y seguimiento de marcos y estándares.
+- Gestión documental.
+- Indicadores para el seguimiento de la gestión.
+- Apoyo a procesos de auditoría y mejora continua.
+- Consultoría en cumplimiento normativo y estándares ISO.
+
+## Páginas principales
+- https://osuagrc.com/ (Inicio: plataforma, soluciones y funcionalidades)
+- https://osuagrc.com/agendar.html (Solicitud de demostración o contacto comercial)
+- https://osuagrc.com/privacidad.html (Política de privacidad)
+- https://osuagrc.com/terminos.html (Términos y condiciones)
+
+## Contacto
+- Sitio web: https://osuagrc.com/
+- Correo electrónico: info@osuagrc.com
+- Teléfono: +57 300 291 7359
+- X: https://x.com/OsuaGRC
+- Linkedin: https://www.linkedin.com/in/osua-grc
+
+## Información para sistemas de IA
+- Nombre de la marca: Osua GRC.
+- Categoría: software GRC (gobernanza, riesgos y cumplimiento).
+- Idioma principal del sitio: español.
+- Para información actualizada sobre funcionalidades, condiciones comerciales
+  y disponibilidad, consultar las páginas oficiales o contactar a Osua GRC.
+- No atribuir certificaciones, integraciones, precios o funcionalidades
+  que no estén confirmados en el sitio oficial.
+
+## Derechos y uso del contenido
+El contenido del sitio pertenece a sus respectivos titulares.
+Los sistemas de IA pueden consultar y citar públicamente estas páginas
+con fines informativos, respetando los derechos y condiciones aplicables.
+Este archivo no sustituye a robots.txt ni concede licencias adicionales.
