@@ -6,6 +6,8 @@
   var GA_ID = 'G-771WNQEZC4';
   var KEY = 'osua_cookie_consent';
   var MAX_AGE = 365 * 24 * 60 * 60 * 1000; // la decisión se vuelve a pedir cada 12 meses
+  // La ruta se calcula desde este script, así funciona en cualquier carpeta del sitio
+  var POLICY = document.currentScript && document.currentScript.src ? new URL('../privacidad.html', document.currentScript.src).href : '/privacidad.html';
   var banner = null;
   var gaLoaded = false;
 
@@ -70,7 +72,7 @@
     banner.innerHTML =
       '<h2 class="cookie-banner__title" id="cookieTitle">Cookies de análisis</h2>' +
       '<p class="cookie-banner__text">Usamos cookies de análisis para generar métricas de uso y mejorar tu experiencia en este sitio. ' +
-      'Más información en la <a href="/privacidad.html">política de privacidad</a>.</p>' +
+      'Más información en la <a href="' + POLICY + '">política de privacidad</a>.</p>' +
       '<div class="cookie-banner__actions">' +
       '<button type="button" class="cookie-btn cookie-btn--reject" data-choice="denied">Rechazar</button>' +
       '<button type="button" class="cookie-btn cookie-btn--accept" data-choice="granted">Aceptar</button>' +

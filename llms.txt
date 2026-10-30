@@ -15,6 +15,16 @@ No se deben atribuir a Osua GRC certificaciones, integraciones, precios o funcio
 - [Inicio de Osua GRC](https://osuagrc.com/): Presentación de la plataforma de software GRC, sus soluciones y funcionalidades.
 - [Agendar demostración](https://osuagrc.com/agendar.html): Contacto comercial y solicitud de demostración de la plataforma.
 
+## Soluciones
+
+- [Contexto y Estrategia](https://osuagrc.com/soluciones/contexto-y-estrategia.html): Analiza el contexto, las partes interesadas y las estrategias para orientar la gestión.
+- [Indicadores](https://osuagrc.com/soluciones/indicadores.html): Define objetivos, metas e indicadores para convertir la estrategia en resultados medibles.
+- [Compliance](https://osuagrc.com/soluciones/compliance.html): Gestiona fuentes normativas y requisitos aplicables a tu organización.
+- [Gestión Documental](https://osuagrc.com/soluciones/gestion-documental.html): Controla versiones, aprobaciones, trazabilidad y disponibilidad de la documentación.
+- [Riesgos y Oportunidades](https://osuagrc.com/soluciones/riesgos-y-oportunidades.html): Identifica, evalúa y trata riesgos y oportunidades con controles y seguimiento.
+- [Auditoría Interna](https://osuagrc.com/soluciones/auditoria-interna.html): Planifica y gestiona auditorías, evalúa criterios, registra hallazgos y realiza seguimiento.
+- [Planes de Acción y Mejora](https://osuagrc.com/soluciones/planes-de-accion-y-mejora.html): Gestiona causas raíz, acciones, responsables, fechas, seguimiento y verificación de eficacia.
+
 ## Información legal
 
 - [Política de privacidad](https://osuagrc.com/privacidad.html): Información sobre privacidad y tratamiento de datos.
