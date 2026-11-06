@@ -506,127 +506,86 @@ img, svg { display: block; max-width: 100%; height: auto; }
   .lightbox-close { top: 14px; right: 14px; }
 }
 
-/* ---------- Consultoría / Carrusel de normas ---------- */
-.consulting { padding: 96px 0 88px; background: var(--bg-soft); }
-.consulting .section-head { margin-bottom: 40px; }
+/* ---------- Normas / cinta automática ---------- */
+.norms { padding: 88px 0 80px; background: var(--bg-soft); overflow: hidden; }
+.norms .section-head { margin-bottom: 44px; }
+.norms { padding-bottom: 88px; }
 
-.carousel {
+.norms-marquee {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: var(--wrap);
-  margin: 0 auto;
-  padding: 0 24px;
+  /* desvanece los bordes para que los chips entren y salgan sin corte */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-
-.carousel-track {
+.norms-track {
   display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 4px 2px 16px;
+  width: max-content;
+  animation: norms-scroll 42s linear infinite;
+}
+.norms-marquee--alt { display: none; }
+.norms-marquee:hover .norms-track,
+.norms-marquee:focus-within .norms-track { animation-play-state: paused; }
+
+.norms-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  padding: 4px 8px 4px 0;
   margin: 0;
   list-style: none;
-  /* oculta la barra de scroll manteniendo el desplazamiento nativo/táctil */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-.carousel-track::-webkit-scrollbar { display: none; }
+/* 4 grupos iguales: al desplazar 1/4 del recorrido el bucle es continuo */
+@keyframes norms-scroll { to { transform: translateX(-25%); } }
 
-.carousel-slide {
-  flex: 0 0 280px;
-  scroll-snap-align: start;
-}
-
-.norm-card {
-  position: relative; /* contiene el texto .sr-only para que el carrusel lo recorte */
-  height: 100%;
+.norm-chip {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 26px 14px 16px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--navy-700);
-  border-radius: var(--radius-m);
-  padding: 26px 24px 24px;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 999px;
+  white-space: nowrap;
 }
-/* border-color pisaría la franja, por eso se vuelve a fijar el color superior */
-.norm-card:hover { border-color: var(--blue-500); border-top-color: var(--navy-700); box-shadow: var(--shadow-card); }
-
-.norm-card-icon {
-  width: 48px;
-  height: 48px;
+.norm-chip-icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--blue-100);
   color: var(--navy-700);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  margin-bottom: 16px;
+  font-size: 1.05rem;
 }
-.norm-card h3 { margin-bottom: 2px; }
-.norm-card-tag {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--gold-700);
-  margin-bottom: 12px;
-}
-.norm-card p:not(.norm-card-tag) { font-size: 0.92rem; margin-bottom: 16px; flex-grow: 1; }
-.norm-card-link {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--navy-700);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-}
-.norm-card-link i { font-size: 0.75rem; transition: transform 0.15s ease; }
-.norm-card-link:hover { color: var(--blue-500); }
-.norm-card-link:hover i { transform: translateX(3px); }
-
-.carousel-arrow {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1.5px solid var(--line);
-  background: var(--white);
+.norm-chip-text { display: flex; flex-direction: column; line-height: 1.25; }
+.norm-chip-text strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--navy-800);
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 }
-.carousel-arrow:hover { border-color: var(--navy-700); color: var(--navy-700); }
-.carousel-arrow:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+.norm-chip-text span { font-size: 0.84rem; color: var(--ink-soft); }
 
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
+/* Sin movimiento: los chips se muestran quietos, centrados y sin duplicados */
+@media (prefers-reduced-motion: reduce) {
+  .norms-track { animation: none; width: auto; justify-content: center; }
+  .norms-marquee { -webkit-mask-image: none; mask-image: none; padding: 0 20px; }
+  .norms-group[aria-hidden="true"], .norms-marquee--alt { display: none !important; }
+  .norms-group { flex-wrap: wrap; justify-content: center; }
 }
-.carousel-dots button {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: var(--line);
-  cursor: pointer;
-}
-.carousel-dots button.is-active { background: var(--navy-700); width: 22px; border-radius: 4px; transition: width 0.2s ease; }
 
 @media (max-width: 640px) {
-  .carousel-arrow { display: none; }
-  .carousel { padding: 0 20px; }
-  .carousel-slide { flex-basis: 250px; }
+  .norms { padding: 64px 0 64px; }
+  .norms .section-head { margin-bottom: 32px; }
+  .norm-chip { padding: 10px 20px 10px 12px; gap: 12px; }
+  .norm-chip-icon { width: 38px; height: 38px; font-size: 0.95rem; }
+  .norm-chip-text strong { font-size: 1.05rem; }
+  .norm-chip-text span { font-size: 0.78rem; }
+  /* segunda fila en sentido contrario, solo en móvil */
+  .norms-marquee--alt { display: block; margin-top: 14px; }
+  .norms-marquee--alt .norms-track { animation-direction: reverse; animation-duration: 48s; }
 }
 
 /* ---------- CTA final ---------- */

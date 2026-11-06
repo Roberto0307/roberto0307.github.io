@@ -2,7 +2,7 @@
 
 > Osua GRC es una plataforma de software para gobernanza, gestión de riesgos y cumplimiento normativo (GRC). Ayuda a las organizaciones a conectar sus procesos de gestión, auditoría y mejora continua en un solo lugar.
 
-Osua GRC ofrece soluciones para gestionar riesgos y oportunidades, cumplimiento normativo, documentación, indicadores y auditorías. También ofrece consultoría en cumplimiento normativo y estándares ISO.
+Osua GRC ofrece soluciones para gestionar riesgos y oportunidades, cumplimiento normativo, documentación, indicadores y auditorías. Está pensada para apoyar la gestión bajo estándares como ISO 9001, ISO 31000, ISO 37301 e ISO 19011; su uso no implica certificación.
 
 El idioma principal del sitio es español, y su sitio oficial es https://osuagrc.com/.
 
