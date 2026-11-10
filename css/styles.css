@@ -523,8 +523,6 @@ img, svg { display: block; max-width: 100%; height: auto; }
   animation: norms-scroll 42s linear infinite;
 }
 .norms-marquee--alt { display: none; }
-.norms-marquee:hover .norms-track,
-.norms-marquee:focus-within .norms-track { animation-play-state: paused; }
 
 .norms-group {
   display: flex;
